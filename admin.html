@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hallpay - Admin Panel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <img src="/hallpaylogo.png" alt="Hallpay Logo" class="header-logo">
+    <div id="userDisplay">Loading user...</div>
+  </div>
+
+  <div class="header-buttons">
+    <button onclick="toggleSidebar()">Menu</button>
+    <button onclick="logout()">Logout</button>
+  </div>
+</header>
+
+<div id="sidebar">
+  <h3>Site Map</h3>
+  <a href="/home">Home</a>
+  <a href="/listings-page">Listings</a>
+  <a href="/create">Create Listing</a>
+  <a href="/modify-page">Modify Listings</a>
+  <a href="/admin-page" class="admin-only-link" style="display:none;">Admin Panel</a>
+</div>
+
+<main>
+  <h1>Admin Panel</h1>
+
+  <section class="admin-section">
+  <h2>Ban User</h2>
+
+  <label for="banEmail">User Email to Ban</label>
+  <input id="banEmail" type="email" placeholder="user@example.com">
+
+  <button onclick="banUser()">Ban User</button>
+
+  <p id="banStatus"></p>
+</section>
+
+<section class="admin-section">
+  <h2>Unban User</h2>
+
+  <label for="unbanEmail">User Email to Unban</label>
+  <input id="unbanEmail" type="email" placeholder="user@example.com">
+
+  <button onclick="unbanUser()">Unban User</button>
+
+  <p id="unbanStatus"></p>
+</section>
+
+<section class="admin-section">
+  <h2>Promote Admin</h2>
+
+  <label for="promoteEmail">User Email to Promote</label>
+  <input id="promoteEmail" type="email" placeholder="user@example.com">
+
+  <button onclick="promoteUser()">Promote to Admin</button>
+
+  <p id="promoteStatus"></p>
+</section>	
+
+  <section class="admin-section">
+    <h2>All Listings</h2>
+    <p class="admin-note">Admins can edit or permanently delete every listing.</p>
+    <div id="adminListings" class="modify-grid"></div>
+  </section>
+</main>
+
+<script src="market.js"></script>
+</body>
+</html>

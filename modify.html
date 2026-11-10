@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hallpay - Modify Listings</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <img src="/hallpaylogo.png" alt="Hallpay Logo" class="header-logo">
+    <div id="userDisplay">Loading user...</div>
+  </div>
+
+  <div class="header-buttons">
+    <button onclick="toggleSidebar()">Menu</button>
+    <button onclick="logout()">Logout</button>
+  </div>
+</header>
+
+<div id="sidebar">
+  <h3>Site Map</h3>
+  <a href="/home">Home</a>
+  <a href="/listings-page">Listings</a>
+  <a href="/create">Create Listing</a>
+  <a href="/modify-page">Modify Listings</a>
+  <a href="/admin-page" class="admin-only-link" style="display:none;">Admin Panel</a>
+</div>
+
+<main>
+  <h1>Modify Your Listings</h1>
+  <div id="myListings" class="modify-grid"></div>
+</main>
+
+<script src="market.js"></script>
+</body>
+</html>

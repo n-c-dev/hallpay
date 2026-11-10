@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hallpay - Create Listing</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <img src="/hallpaylogo.png" alt="Hallpay Logo" class="header-logo">
+    <div id="userDisplay">Loading user...</div>
+  </div>
+
+  <div class="header-buttons">
+    <button onclick="toggleSidebar()">Menu</button>
+    <button onclick="logout()">Logout</button>
+  </div>
+</header>
+
+<div id="sidebar">
+  <h3>Site Map</h3>
+  <a href="/home">Home</a>
+  <a href="/listings-page">Listings</a>
+  <a href="/create">Create Listing</a>
+  <a href="/modify-page">Modify Listings</a>
+  <a href="/admin-page" class="admin-only-link" style="display:none;">Admin Panel</a>
+</div>
+
+<main>
+  <h1>Create Listing</h1>
+
+  <input id="name" placeholder="Item Name">
+  <input id="desc" placeholder="Description">
+  <input id="price" type="number" step="0.01" min="0" placeholder="Price">
+
+  <select id="category">
+    <option value="">Select Category</option>
+    <option>Food/Drink</option>
+    <option>Furniture</option>
+    <option>Appliances</option>
+    <option>Transportation</option>
+    <option>Clothing</option>
+    <option>Electronics</option>
+    <option>Other</option>
+  </select>
+
+  <input id="imageFile" type="file" accept=".heic,.jpg,.png">
+
+  <p class="upload-note">
+    Allowed uploads: .heic, .jpg, or .png only. Maximum size: 10MB.
+  </p>
+
+  <button onclick="saveItem()">Publish Listing</button>
+
+  <p id="status"></p>
+</main>
+
+<script src="market.js"></script>
+</body>
+</html>

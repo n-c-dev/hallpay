@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hallpay - Listings</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <img src="/hallpaylogo.png" alt="Hallpay Logo" class="header-logo">
+    <div id="userDisplay">Loading user...</div>
+  </div>
+
+  <div class="header-buttons">
+    <button onclick="toggleSidebar()">Menu</button>
+    <button onclick="logout()">Logout</button>
+  </div>
+</header>
+
+<div id="sidebar">
+  <h3>Site Map</h3>
+  <a href="/home">Home</a>
+  <a href="/listings-page">Listings</a>
+  <a href="/create">Create Listing</a>
+  <a href="/modify-page">Modify Listings</a>
+  <a href="/admin-page" class="admin-only-link" style="display:none;">Admin Panel</a>
+</div>
+
+<main class="listings-main">
+  <h1>Listings</h1>
+<p class="upload-note">
+    To create your own listings, go to Menu >> Create Listing
+  </p>  
+
+  <section class="filter-panel">
+    <h2>Filter Listings</h2>
+
+    <div class="filter-grid">
+      <div class="filter-field">
+        <label for="filterPhrase">Name or Description Contains</label>
+        <input id="filterPhrase" type="text" placeholder="Search phrase">
+      </div>
+
+      <div class="filter-field">
+        <label for="filterMinPrice">Minimum Price</label>
+        <input id="filterMinPrice" type="number" step="0.01" min="0" placeholder="0">
+      </div>
+
+      <div class="filter-field">
+        <label for="filterMaxPrice">Maximum Price</label>
+        <input id="filterMaxPrice" type="number" step="0.01" min="0" placeholder="100">
+      </div>
+
+      <div class="filter-field">
+        <label for="filterCategory">Category</label>
+        <select id="filterCategory">
+          <option value="">All Categories</option>
+          <option>Food/Drink</option>
+          <option>Furniture</option>
+          <option>Appliances</option>
+          <option>Transportation</option>
+          <option>Clothing</option>
+          <option>Electronics</option>
+          <option>Other</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="filter-options-row">
+      <label class="checkbox-label">
+        <input id="filterIncludeSold" type="checkbox">
+        Show sold listings
+      </label>
+    </div>
+
+    <div class="filter-buttons">
+      <button onclick="loadListings()">Apply Filters</button>
+      <button onclick="clearFilters()">Clear Filters</button>
+    </div>
+  </section>
+
+  <div id="market" class="card-grid"></div>
+</main>
+
+<script src="market.js"></script>
+</body>
+</html>
